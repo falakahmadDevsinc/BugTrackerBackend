@@ -43,6 +43,4 @@ app.use("/user", passport.authenticate("jwt", { session: false }), SecureRoute);
 connectDB();
 app.use(errorHandler);
 
-app.listen(config.port, () =>
-  console.log(`Server is Running at PORT ${config.port}`)
-);
+export default app;
