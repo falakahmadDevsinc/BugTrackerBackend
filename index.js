@@ -24,7 +24,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // CORS for API
-app.use(cors({ origin: config.clientOrigin }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://bugtrackerbyfalak.web.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 // Serve uploads with CORS
 app.use(
