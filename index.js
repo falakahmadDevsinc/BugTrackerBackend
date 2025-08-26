@@ -42,5 +42,8 @@ app.use("/user", passport.authenticate("jwt", { session: false }), SecureRoute);
 
 connectDB();
 app.use(errorHandler);
+app.get("/", (req, res) => {
+  res.send("Backend is running ✅");
+});
 
 export default app;
