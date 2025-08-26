@@ -6,7 +6,8 @@ export default {
   mongoURL: process.env.MONGO_URI,
   jwtSecret: process.env.JWT_SECRET || "TOP_SECRET",
   bcryptSaltRounds: parseInt(process.env.BCRYPT_SALT_ROUNDS, 10) || 10,
-  clientOrigin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+  clientOrigin:
+    process.env.CLIENT_ORIGIN || "https://bugtrackerbyfalak.web.app",
   emailService: process.env.EMAIL_SERVICE || "gmail",
   emailUser: process.env.EMAIL_USER,
   emailPass: process.env.EMAIL_PASS,
