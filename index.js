@@ -17,6 +17,7 @@ import NotificationRouter from "./routes/notificationRoutes.js";
 import AIResponsesRouter from "./routes/aiRoutes.js";
 
 const app = express();
+app.set("trust proxy", 1);
 app.use(express.json());
 app.use(helmet({ crossOriginResourcePolicy: false }));
 const __filename = fileURLToPath(import.meta.url);
