@@ -74,7 +74,9 @@ export const editProjectService = async (
   if (expectedEndDate) project.expectedEndDate = expectedEndDate;
 
   await project.save();
-  return project;
+
+  // 🔹 Populate before returning
+  return await populateProject(project._id);
 };
 
 export const deleteProjectService = async (userId, projectId) => {
